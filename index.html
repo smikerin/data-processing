@@ -1,86 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-     <title>Form Template</title>
+     <title>Data Processing</title>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/forms.css" />
-
+  <link rel="stylesheet" href="css/data-processing.css" />
  </head>
  <body>
      <header>
      <h1>Form Template</h1>
         <nav class="topnav" id="myTopnav">
             <a href="index.html" class="active">Home</a>
-            <a href="#" target="_blank">Name of project goes here</a>
+            <a href="" target="_blank"></a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
      </header>
      
    <main class="wrapper">
-        <form method="get" action="" class="main-form">
-            <div>
-                <label for="FirstName">First Name</label>:<br /> 
-                <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required="required" title="First Name is required" autofocus />
+    <div id="output">
+        <form method="GET" action="" class="main-form">
+            <p>This page demonstrates data processing of query string data using client side JavaScript.
+
+                Upon submission, the cart items are totaled and title case is applied to the Shipping Info.</p>
+            <h3>Widgets</h3>
+            <div id="widgets">
+                <div>
+                    <b>Widget</b><br />
+                    <p>Our Widgets are spring loaded and need no batteries!</p>
+                    <p>At $3.99 they're a bargain!</p>
+                    <p><label><input type="checkbox" name="Cart" value="Widget" />Add to Cart</label><br /></p>
+                    <div class="pic"><img src="images/widget.png" /></div>
+                </div>
+                <div>
+                    <b>Sprocket</b><br />
+                    <p>Our Sprockets are well made and hold up to extreme pressure!</p>
+                    <p>They only cost $5.99!</p>
+                    <p><label><input type="checkbox" name="Cart" value="Sprocket" />Add to Cart</label><br /></p>
+                    <div class="pic"><img src="images/sprocket.png" /></div>
+                </div>
+                <div>
+                    <b>Thingy</b><br />
+                    <p>Our Thingys have many uses!</p>
+                    <p>Such a deal at $1.99!</p>
+                    <p><label><input type="checkbox" name="Cart" value="Thingy" />Add to Cart</label><br /></p>
+                    <div class="pic"><img src="images/thingy.png" /></div>
+                </div>
+            </div>
+            <h3>Shipping Information</h3>
+            <div><label for="FirstName">First Name</label>: <br />
+                <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required="required" autofocus />
+            </div>
+            <div><label for="LastName">Last Name</label>: <br />
+                <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required="required" />
+            </div>
+            <div><label for="Email">Email</label>: <br />
+                <input type="email" name="Email" id="Email" placeholder="Email" required="required" />
             </div>
             <div>
-                <label for="LastName">Last Name</label>:<br /> 
-                <input type="text" name="LastName" id="LastName" placeholder="Last Name" required="required" title="Last Name is required"/>
+                <label for="Address">Address</label>: <br />
+                <input type="text" name="Address" id="Address" placeholder="Address" required="required" />
             </div>
             <div>
-                <label for="Email">Email</label>:<br /> 
-                <input type="email" name="Email" id="Email" placeholder="Email" required="required" title="Email is required"/>
+                <label for="City">City</label>: <br />
+                <input type="text" name="City" id="City" placeholder="City" required="required" />
             </div>
             <div>
-                <label for="Address">Address</label>:<br /> 
-                <input type="address" name="Address" id="Address" placeholder="Please put your address here" required="required" title="Address is required"/>
-            </div>
-            <div>
-                <label for="State">State</label>:<br /> 
-                <select name="State" id="State" required="required" >
-                    <option value="">Please select your state</option>
-                    <option value="AK">Alaska</option> 
-                    <option value="CA">California</option> 
-                    <option value="OR">Oregon</option> 
-                    <option value="WA">Washington</option> 
+                <label for="State">State</label>: <br />
+                <select name="State" id="State" required="required">
+                    <option value="">Please select state</option>
+                    <option value="AK">Alaska</option>
+                    <option value="CA">Calfornia</option>
+                    <option value="OR">Oregon</option>
+                    <option value="WA">Washington</option>
                 </select>
             </div>
             <div>
-                <fieldset>
-                    <legend>Would You Like to Join Our Mailing List?</legend>
-                    <input type="radio" name="JoinMailingList" value="Yes" required="required" /> Yes</label> <br />
-                    <input type="radio" name="JoinMailingList" value="No" /> No</label>
-                </fieldset>
+                <label for="postalCode">Postal Code</label>: <br />
+                <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code" required="required" />
             </div>
             <div>
-                <fieldset>
-                    <legend>What are you interested in?</legend>
-                    <input type="checkbox" name="InterestedIn" value="Website" /> Website</label> <br />
-                    <input type="checkbox" name="InterestedIn" value="Online Calender" /> Online Calendar</label> <br />
-                    <input type="checkbox" name="InterestedIn" value="ContactForm" /> Contact Form</label> <br />
-                    <input type="checkbox" name="InterestedIn" value="Online Calender" /> Complimentary Lollipops</label>
-
-
-                </fieldset>
+                <label for="Note">Note</label>: <br />
+                <textarea name="Note" cols="36" rows="4" id="Note"></textarea>
             </div>
             <div>
-                <label for="Address">Address</label>:<br /> 
-                <textarea  name="Comments" placeholder="Your opinion is important to us" cols="36" rows="4"></textarea>    
+                <input type="submit" value="Submit "/>
             </div>
-            <div><input type="submit" value="Submit"/></div>
         </form>
-     <footer>
-      <p><small>&copy; <span id="copyright"></span> by 
-          YOUR NAME HERE, All Rights Reserved ~ 
-          <a id="html-checker" href="#">Check HTML</a> ~ 
-          <a id="css-checker" href="#">Check CSS</a></small>
-     </p>
-    </footer>
+    </div>
+    <footer>
+    <p><small>&copy; <span id="copyright"></span> by 
+        YOUR NAME HERE, All Rights Reserved ~ 
+        <a id="html-checker" href="#">Check HTML</a> ~ 
+        <a id="css-checker" href="#">Check CSS</a></small>
+    </p>
+  </footer>
   </main>
-<script src="js/main.js"></script>
-     
+  <script src="js/data-processing.js"></script>
+  <script src="js/main.js"></script>
  </body>
 </html>
